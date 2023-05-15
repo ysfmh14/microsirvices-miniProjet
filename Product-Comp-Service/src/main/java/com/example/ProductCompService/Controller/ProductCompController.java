@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/product-comp")
 public class ProductCompController {
 
     private ProductCompService productCompService;
@@ -27,6 +26,10 @@ public class ProductCompController {
     @GetMapping("/recommendation/{id}")
     List<Recommandation> getRecommendationsByProduct(@PathVariable(name = "id") int id){
         return productCompService.getRecommandationsByProduct(id);
+    }
+    @GetMapping("/hello")
+    String test(@PathVariable(name = "id") int id){
+        return "hello";
     }
 
 }

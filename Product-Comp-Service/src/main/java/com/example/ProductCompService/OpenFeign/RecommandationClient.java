@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-@FeignClient(name = "recommendation-service" , url = "http://localhost:7003")
+@FeignClient(name = "recommendation-service" )
 public interface RecommandationClient {
     @GetMapping("/api/v1/recommendations/{productId}")
     public List<Recommandation> getRecommandationsByProduct(@PathVariable int productId);
