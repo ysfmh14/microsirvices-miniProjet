@@ -27,6 +27,11 @@ public class ReviewController  implements ReviewApi {
     }
 
     @Override
+    public List<ReviewResponseDTO> getReviewsByProduct(int id) {
+        return reviewService.getReviewsByProduct(id);
+    }
+
+    @Override
     public ReviewResponseDTO save(ReviewRequestDto reviewRequestDto) {
         return reviewService.addReview(reviewRequestDto);
     }

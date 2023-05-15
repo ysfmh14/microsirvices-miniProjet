@@ -13,5 +13,6 @@ public interface ReviewService {
     ReviewResponseDTO addReview(ReviewRequestDto reviewRequestDto);
     ReviewResponseDTO UpdateReview(ReviewRequestDto reviewRequestDto);
     ReviewResponseDTO saveReview(ReviewRequestDto reviewRequestDto);
+    List<ReviewResponseDTO> getReviewsByProduct(int id);
     void  deleteReview(long reviewId);
 }

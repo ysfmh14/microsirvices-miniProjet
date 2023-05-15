@@ -33,7 +33,7 @@ public class ReviewServiceImpl implements ReviewService {
         List<Review> reviewList =reviewDAO.findAll();
 
        for (Review r : reviewList){
-           r.setProduct(productRestController.findProductById(r.getProductInt()));
+           r.setProduct(productRestController.getProductById(r.getProductInt()));
        }
         return reviewMapper.modelToDtos(reviewList);
     }
@@ -44,7 +44,7 @@ public class ReviewServiceImpl implements ReviewService {
         if (!review.isPresent()){
                 throw new ReviewNotFoundException("Il n' y a aucune review avec cet ID");
         }
-        review.get().setProduct(productRestController.findProductById(review.get().getProductInt()));
+        review.get().setProduct(productRestController.getProductById(review.get().getProductInt()));
         return reviewMapper.modelToDto(review.get());
     }
 
@@ -63,6 +63,12 @@ public class ReviewServiceImpl implements ReviewService {
         Review review = reviewMapper.dtoToModel(reviewRequestDto);
         Review savedReview = reviewDAO.save(review);
         return reviewMapper.modelToDto(savedReview);
+    }
+
+    @Override
+    public List<ReviewResponseDTO> getReviewsByProduct(int id) {
+        List<Review> reviewList = reviewDAO.findReviewsByProductInt(id);
+        return reviewMapper.modelToDtos(reviewList);
     }
 
     @Override

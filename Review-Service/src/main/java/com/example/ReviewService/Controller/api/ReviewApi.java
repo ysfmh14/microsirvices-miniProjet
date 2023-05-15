@@ -15,7 +15,8 @@ public interface ReviewApi {
 
     @GetMapping("/{id}")
     ReviewResponseDTO getReviewById(@PathVariable(name = "id") long id);
-
+    @GetMapping("/product/{id}")
+   List< ReviewResponseDTO> getReviewsByProduct(@PathVariable(name = "id") int id);
 
     @PostMapping
     ReviewResponseDTO save(@RequestBody ReviewRequestDto reviewRequestDto);
