@@ -1,27 +1,5 @@
-
-
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
 spring:
+  application:
+    name: product-service
   config:
     import: optional:configserver:http://localhost:8888
-  application:
-    name: recommendation-service
-  datasource:
-    url: jdbc:mysql://localhost/recommendationn-service?createDatabaseIfNotExist=true&serverTimezone=UTC
-    username: root
-    password:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-
-server:
-  port: 7003
-  servlet:
-    context-path: /api/v1
