@@ -1,5 +1,5 @@
 spring:
   application:
-    name: product-service
+    name: recommendation-service
   config:
     import: optional:configserver:http://localhost:8888
