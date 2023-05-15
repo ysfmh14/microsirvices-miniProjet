@@ -1,10 +1,10 @@
-package com.wecouldcode.configservice;
+package com.wecouldcode.gateway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ConfigServiceApplicationTests {
+class GatewayApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -20,8 +20,8 @@ public class ProductController {
     public ResponseEntity<List<ResponseProductDto>> getProducts() {
         return new ResponseEntity<>(productService.getProducts(), HttpStatus.OK);
     }
-    @GetMapping("/{id}")
-    public ResponseEntity<ResponseProductDto> getProductById(int productId) {
+    @GetMapping("/{productId}")
+    public ResponseEntity<ResponseProductDto> getProductById(@PathVariable int productId) {
         return new ResponseEntity<>(productService.getProductById(productId), HttpStatus.OK);
     }
     @PostMapping
