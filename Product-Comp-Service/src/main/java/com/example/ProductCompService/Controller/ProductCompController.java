@@ -1,5 +1,6 @@
 package com.example.ProductCompService.Controller;
 
+import com.example.ProductCompService.Entities.Product;
 import com.example.ProductCompService.Entities.Recommandation;
 import com.example.ProductCompService.Entities.Reviews;
 import com.example.ProductCompService.Services.ProductCompService;
@@ -27,9 +28,9 @@ public class ProductCompController {
     List<Recommandation> getRecommendationsByProduct(@PathVariable(name = "id") int id){
         return productCompService.getRecommandationsByProduct(id);
     }
-    @GetMapping("/hello")
-    String test(@PathVariable(name = "id") int id){
-        return "hello";
+    @GetMapping("/products")
+    List<Product> getAllProducts(){
+        return productCompService.getAllProducts();
     }
 
 }

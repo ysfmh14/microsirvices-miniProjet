@@ -15,5 +15,6 @@ public class ReviewResponseDTO {
     private String author;
     private  String subject;
     private String content;
+    private int productInt;
     private Product product;
 }

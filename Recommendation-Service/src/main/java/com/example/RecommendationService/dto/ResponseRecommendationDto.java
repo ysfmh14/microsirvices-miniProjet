@@ -15,5 +15,6 @@ public class ResponseRecommendationDto {
     private String author;
     private int rate;
     private String content;
+    private int productId;
     private Product product;
 }
