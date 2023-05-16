@@ -18,6 +18,6 @@ spring:
     show-sql: true
 
 server:
-  port: 7005
+  port: 7001
   servlet:
     context-path: /api/v1

@@ -11,15 +11,11 @@ import java.util.List;
 
 @RestController
 public class ProductCompController {
-
     private ProductCompService productCompService;
     @Autowired
     public ProductCompController(ProductCompService productCompService) {
         this.productCompService = productCompService;
     }
-
-
-
     @GetMapping("/review/{id}")
     List<Reviews> getReviewsByProduct(@PathVariable(name = "id") int id){
         return productCompService.getReviewsByProduct(id);

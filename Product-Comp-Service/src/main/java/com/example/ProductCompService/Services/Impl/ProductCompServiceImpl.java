@@ -19,7 +19,8 @@ public class ProductCompServiceImpl implements ProductCompService {
     private RecommandationClient recommandationClient;
     private ProductClient productClient;
     @Autowired
-    public ProductCompServiceImpl(ReviewClient reviewClient,ProductClient productClient, RecommandationClient recommandationClient) {
+    public ProductCompServiceImpl(ReviewClient reviewClient
+            ,ProductClient productClient, RecommandationClient recommandationClient) {
         this.reviewClient = reviewClient;
         this.productClient = productClient;
         this.recommandationClient = recommandationClient;
